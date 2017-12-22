@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="images/store_likes.png" alt="">
+        <span>收藏</span>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var imgs = $('.wrapper').find('img')
+            imgs.switch = true
+            imgs.click(function () {
+                if (imgs.switch) {
+                    imgs.attr('src', 'images/store_likes_selected.png')
+                    imgs.switch = false
+                    setTimeout(function () {
+                        alert('收藏成功')
+                    }, 200)
+                } else {
+                    imgs.attr('src', 'images/store_likes.png')
+                    imgs.switch = true
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
